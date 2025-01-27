@@ -20,6 +20,6 @@ RUN mvn clean package -DskipTests
 FROM openjdk:21-jdk-slim
 
 WORKDIR /app
-COPY --from=build /app/target/main-0.0.1-SNAPSHOT.jar /app/lmain-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/main-0.0.1-SNAPSHOT.jar /app/main-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 CMD ["java", "-jar", "main-0.0.1-SNAPSHOT.jar"]
